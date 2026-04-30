@@ -1,18 +1,29 @@
 "use client";
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import './about.css';
 import PageTransition from '@/components/PageTransition';
 
 export default function AboutPage() {
-  const fadeInUp = {
+  const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { 
+        duration: 0.8, 
+        ease: [0.22, 1, 0.36, 1] 
+      } 
+    }
   };
 
-  const stagger = {
-    visible: { transition: { staggerChildren: 0.2 } }
+  const stagger: Variants = {
+    visible: { 
+      transition: { 
+        staggerChildren: 0.2 
+      } 
+    }
   };
 
   return (

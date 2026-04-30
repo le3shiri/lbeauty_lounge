@@ -47,9 +47,16 @@ export default function BookingPage() {
     window.open(whatsappUrl, '_blank');
   };
 
-  const stepVariants = {
+  const stepVariants: Variants = {
     initial: { opacity: 0, x: 20 },
-    animate: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+    animate: { 
+      opacity: 1, 
+      x: 0, 
+      transition: { 
+        duration: 0.6, 
+        ease: [0.22, 1, 0.36, 1] as [number, number, number, number]
+      } 
+    },
     exit: { opacity: 0, x: -20, transition: { duration: 0.4 } }
   };
 
