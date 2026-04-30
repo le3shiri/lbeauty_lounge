@@ -1,0 +1,164 @@
+.booking-page {
+  background-color: var(--color-bg-dark);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.booking-hero {
+  padding: 220px 20px 80px;
+  text-align: center;
+}
+
+.booking-hero h1 {
+  font-size: clamp(40px, 6vw, 80px);
+  margin-bottom: 20px;
+}
+
+.booking-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 150px;
+}
+
+.booking-steps-nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.step-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #444;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.step-indicator.active {
+  color: var(--color-primary);
+}
+
+.step-circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.step-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.booking-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 80px 60px;
+  border-radius: 4px;
+}
+
+.booking-card h2 {
+  font-size: 42px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* Service Selection Grid */
+.booking-service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.booking-service-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.booking-service-item:hover, .booking-service-item.selected {
+  border-color: var(--color-primary);
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.booking-service-item.selected {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+}
+
+.svc-info h4 {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.svc-info span {
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.svc-price {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--color-primary);
+}
+
+/* Date/Time Styling */
+.datetime-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 60px;
+}
+
+.custom-calendar {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.time-slots {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.time-slot {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.time-slot:hover, .time-slot.selected {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Navigation Buttons */
+.booking-nav-btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+  .booking-service-grid, .datetime-grid {
+    grid-template-columns: 1fr;
+  }
+  .booking-card {
+    padding: 60px 30px;
+  }
+}

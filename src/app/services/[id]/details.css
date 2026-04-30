@@ -1,0 +1,134 @@
+.details-page {
+  background-color: var(--color-bg-dark);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.details-hero {
+  height: 70vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.details-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.details-hero-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.95) 100%);
+}
+
+.details-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+.details-hero-content h1 {
+  font-size: clamp(48px, 6vw, 80px);
+  margin-bottom: 20px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 100px;
+  padding-bottom: 150px;
+}
+
+.details-main h2 {
+  font-size: 42px;
+  margin-bottom: 40px;
+}
+
+.details-main .description {
+  font-size: 20px;
+  line-height: 1.8;
+  color: #ccc;
+  margin-bottom: 60px;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.benefit-item i {
+  color: var(--color-primary);
+  font-size: 18px;
+}
+
+.benefit-item span {
+  font-size: 18px;
+  color: #fff;
+}
+
+.details-sidebar-sticky {
+  position: sticky;
+  top: 150px;
+}
+
+.info-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 60px 40px;
+  border-radius: 4px;
+}
+
+.info-item {
+  margin-bottom: 30px;
+}
+
+.info-item span {
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.info-item p {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  color: #fff;
+}
+
+.recommendation-box {
+  margin-top: 40px;
+  padding: 30px;
+  border: 1px solid var(--color-primary);
+  font-style: italic;
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .details-grid {
+    grid-template-columns: 1fr;
+    gap: 80px;
+  }
+}
