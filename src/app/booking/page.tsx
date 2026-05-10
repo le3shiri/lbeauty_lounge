@@ -81,10 +81,11 @@ export default function BookingPage() {
   });
 
   const services = [
-    { id: 'swedish', name: 'Swedish Excellence', duration: '60 Min', price: '$120' },
-    { id: 'deep', name: 'Deep Tissue Ritual', duration: '90 Min', price: '$150' },
-    { id: 'facial', name: 'Luxe Glow Facial', duration: '60 Min', price: '$140' },
-    { id: 'hammam', name: 'Royal Hammam', duration: '60 Min', price: '$130' },
+    { id: 'hammam_classic', name: 'Hammam Classic', duration: '', price: '100 DH' },
+    { id: 'hammam_oriental', name: 'Hammam Oriental', duration: '', price: '250 DH' },
+    { id: 'hammam_sehraoui', name: 'Hammam Sehraoui', duration: '', price: '300 DH' },
+    { id: 'hammam_royal', name: 'Hammam Royal', duration: '', price: '500 DH' },
+    { id: 'hammam_bubble', name: 'Hammam Bubble souffle', duration: '', price: '500 DH' },
   ];
 
   const timeSlots = ['09:00', '10:30', '12:00', '14:00', '15:30', '17:00', '18:30', '20:00'];
@@ -175,7 +176,7 @@ export default function BookingPage() {
                       >
                         <div className="svc-info">
                           <h4>{svc.name}</h4>
-                          <span>{svc.duration}</span>
+                          {svc.duration && <span>{svc.duration}</span>}
                         </div>
                         <span className="svc-price">{svc.price}</span>
                       </div>

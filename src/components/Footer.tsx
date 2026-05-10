@@ -17,7 +17,7 @@ export default function Footer() {
           <ul>
             <li><Link href="/about">Our Story</Link></li>
             <li><Link href="/services">Spa Treatments</Link></li>
-            <li><Link href="/packages">Wellness Packages</Link></li>
+            {/* <li><Link href="/packages">Wellness Packages</Link></li> */}
             <li><Link href="/booking">Book Appointment</Link></li>
           </ul>
         </div>
