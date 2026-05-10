@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
 import './booking.css';
 import PageTransition from '@/components/PageTransition';
@@ -11,6 +11,69 @@ export default function BookingPage() {
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
 
   const [selectedDate, setSelectedDate] = useState('');
+  const [currentMonthDate, setCurrentMonthDate] = useState<Date | null>(null);
+
+  useEffect(() => {
+    setCurrentMonthDate(new Date());
+  }, []);
+
+  const handlePrevMonth = () => {
+    if (currentMonthDate) {
+      const now = new Date();
+      if (currentMonthDate.getFullYear() === now.getFullYear() && currentMonthDate.getMonth() === now.getMonth()) return;
+      setCurrentMonthDate(new Date(currentMonthDate.getFullYear(), currentMonthDate.getMonth() - 1, 1));
+    }
+  };
+
+  const handleNextMonth = () => {
+    if (currentMonthDate) {
+      setCurrentMonthDate(new Date(currentMonthDate.getFullYear(), currentMonthDate.getMonth() + 1, 1));
+    }
+  };
+
+  const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+  const renderCalendarDays = () => {
+    if (!currentMonthDate) return null;
+    
+    const year = currentMonthDate.getFullYear();
+    const month = currentMonthDate.getMonth();
+    
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const firstDay = new Date(year, month, 1).getDay();
+    
+    const days = [];
+    const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    
+    const headers = weekDays.map(d => <div key={`header-${d}`} className="cal-weekday">{d}</div>);
+    
+    for (let i = 0; i < firstDay; i++) {
+      days.push(<div key={`empty-${i}`} className="cal-empty"></div>);
+    }
+    
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    for (let i = 1; i <= daysInMonth; i++) {
+      const currentIterDate = new Date(year, month, i);
+      const isPast = currentIterDate < today;
+      const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
+      const isSelected = selectedDate === dateStr;
+      
+      days.push(
+        <div 
+          key={dateStr}
+          className={`cal-day ${isSelected ? 'selected' : ''} ${isPast ? 'disabled' : ''}`}
+          onClick={() => !isPast && setSelectedDate(dateStr)}
+        >
+          {i}
+        </div>
+      );
+    }
+    
+    return [...headers, ...days];
+  };
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -131,13 +194,20 @@ export default function BookingPage() {
                   <div className="datetime-grid">
                     <div className="custom-calendar">
                       <label className="step-label" style={{ marginBottom: '20px', display: 'block' }}>Preferred Date</label>
-                      <input 
-                        type="date" 
-                        value={selectedDate}
-                        onChange={(e) => setSelectedDate(e.target.value)}
-                        style={{ width: '100%', background: 'none', border: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '18px', padding: '10px 0', outline: 'none' }} 
-                        required
-                      />
+                      <div className="premium-monthly-calendar">
+                        {currentMonthDate && (
+                          <>
+                            <div className="cal-header">
+                              <button type="button" onClick={handlePrevMonth} className="cal-nav-btn">&larr;</button>
+                              <span className="cal-month-title">{monthNames[currentMonthDate.getMonth()]} {currentMonthDate.getFullYear()}</span>
+                              <button type="button" onClick={handleNextMonth} className="cal-nav-btn">&rarr;</button>
+                            </div>
+                            <div className="cal-grid">
+                              {renderCalendarDays()}
+                            </div>
+                          </>
+                        )}
+                      </div>
                     </div>
                     <div className="time-slots-wrap">
                       <label className="step-label" style={{ marginBottom: '20px', display: 'block' }}>Available Slots</label>

@@ -24,7 +24,7 @@ export default function Footer() {
         <div className="footer-col">
           <h4 className="font-serif">Contact Info</h4>
           <ul>
-            <li>123 Luxury Avenue, Tanger, Morocco</li>
+            <li>route tetouan Aziz Bou Plaza Toro Residence Ajdir entre sol 1</li>
             <li>0610371333</li>
             <li>contact@lbeautylounge.ma</li>
           </ul>

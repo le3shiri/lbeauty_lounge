@@ -50,79 +50,67 @@ export default function ContactPage() {
         </section>
 
         <div className="container">
-          <div className="contact-grid">
+          <motion.div 
+            className="contact-info-centered"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={stagger}
+          >
+            <motion.h2 className="font-serif text-center" variants={fadeInUp} style={{ fontSize: '56px', marginBottom: '30px' }}>Get in <i>Touch</i></motion.h2>
+            <motion.p className="lead text-center" variants={fadeInUp} style={{ maxWidth: '700px', margin: '0 auto 80px', color: '#ccc', fontSize: '20px', lineHeight: 1.8 }}>
+              Whether you seek a momentary escape or a complete wellness transformation, our team in Tanger is dedicated to curating your perfect ritual.
+            </motion.p>
             
-            {/* Info Column */}
-            <motion.div 
-              className="contact-info-col"
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={stagger}
-            >
-              <motion.h2 className="font-serif" variants={fadeInUp}>Get in <i>Touch</i></motion.h2>
-              <motion.p className="lead" variants={fadeInUp}>
-                Whether you seek a momentary escape or a complete wellness transformation, our team in Tanger is dedicated to curating your perfect ritual.
-              </motion.p>
-              
-              <motion.div className="contact-method" variants={fadeInUp}>
+            <div className="contact-methods-grid">
+              <motion.div className="contact-method-card" variants={fadeInUp}>
+                <span className="method-icon">✧</span>
                 <span>Location</span>
-                <p>123 Luxury Avenue, <br/>Tanger, Morocco</p>
+                <p>route tetouan Aziz Bou Plaza <br/>Toro Residence Ajdir entre sol 1</p>
               </motion.div>
 
-              <motion.div className="contact-method" variants={fadeInUp}>
+              <motion.div className="contact-method-card" variants={fadeInUp}>
+                <span className="method-icon">✧</span>
                 <span>Inquiries</span>
                 <p>0610371333</p>
               </motion.div>
 
-              <motion.div className="contact-method" variants={fadeInUp}>
+              <motion.div className="contact-method-card" variants={fadeInUp}>
+                <span className="method-icon">✧</span>
                 <span>Email</span>
                 <p>contact@lbeautylounge.ma</p>
               </motion.div>
 
-              <motion.div className="contact-method" variants={fadeInUp}>
+              <motion.div className="contact-method-card" variants={fadeInUp}>
+                <span className="method-icon">✧</span>
                 <span>Hours</span>
                 <p>Mon — Sun: 09:00 — 21:00</p>
               </motion.div>
-            </motion.div>
-
-            {/* Form Column */}
-            <motion.div 
-              className="contact-form-wrap"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <form className="contact-form glass-panel">
-                <div className="form-group">
-                  <input type="text" id="name" placeholder=" " required />
-                  <label htmlFor="name">Full Name</label>
-                </div>
-                
-                <div className="form-group">
-                  <input type="email" id="email" placeholder=" " required />
-                  <label htmlFor="email">Email Address</label>
-                </div>
-
-                <div className="form-group">
-                  <input type="text" id="subject" placeholder=" " required />
-                  <label htmlFor="subject">Subject</label>
-                </div>
-
-                <div className="form-group">
-                  <textarea id="message" rows={4} placeholder=" " required></textarea>
-                  <label htmlFor="message">How can we help you?</label>
-                </div>
-
-                <div className="submit-btn-wrap">
-                  <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>Send Inquiry</button>
-                </div>
-              </form>
-            </motion.div>
-
-          </div>
+            </div>
+          </motion.div>
         </div>
+
+        {/* Map Section */}
+        <section className="map-section section container" style={{ marginTop: '4rem', marginBottom: '4rem' }}>
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="glass-panel map-container"
+            style={{ overflow: 'hidden', height: '450px', position: 'relative', borderRadius: 'var(--border-radius-lg, 15px)' }}
+          >
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2688.970265406906!2d-5.796336442122436!3d35.76350890933363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sfr!2sma!4v1778159898476!5m2!1sfr!2sma" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen={true} 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </motion.div>
+        </section>
 
       </div>
     </PageTransition>
