@@ -9,39 +9,67 @@ import PageTransition from '@/components/PageTransition';
 export default function ServicesPage() {
   const categories = [
     {
-      id: "massage",
-      title: "Masterful <i>Massages</i>",
-      description: "From traditional Swedish techniques to deep tissue restoration, our expert therapists calibrate every touch to your body's specific needs in the heart of Tanger.",
-      image: "/images/spa-tanger-massage.png",
-      services: [
-        { name: "Swedish Excellence", duration: "60/90 Min", price: "$120" },
-        { name: "Deep Tissue Ritual", duration: "60/90 Min", price: "$140" },
-        { name: "Hot Stone Alleviation", duration: "90 Min", price: "$170" },
-        { name: "Couples Synchrony", duration: "60/90 Min", price: "$230" },
-      ]
-    },
-    {
-      id: "facial",
-      title: "Radiant <i>Facials</i>",
-      description: "Illuminate your complexion with our curated skincare rituals, blending organic Moroccan botanicals with advanced dermatological science.",
+      id: "coiffure",
+      title: "Coiffure & <i>Onglerie</i>",
+      description: "Sublimez votre beauté avec notre expertise en coiffure et en soins des ongles. Des brushings parfaits aux manucures russes, chaque détail compte.",
       image: "/images/spa-tanger-facial.png",
       services: [
-        { name: "Luxe Glow Signature", duration: "60 Min", price: "$150" },
-        { name: "Hydra-Marine Infusion", duration: "45 Min", price: "$110" },
-        { name: "Time-Reversal Ritual", duration: "75 Min", price: "$180" },
-        { name: "Pure Detox Facial", duration: "60 Min", price: "$130" },
+        { name: "Broching normale", duration: "", price: "50 - 80 DH" },
+        { name: "Broching bouclé", duration: "", price: "50 - 100 DH" },
+        { name: "Coloration", duration: "", price: "dès 100 DH" },
+        { name: "Soin capillaire", duration: "", price: "200 - 400 DH" },
+        { name: "Lissage", duration: "", price: "dès 800 DH" },
+        { name: "Coupe", duration: "", price: "50 - 100 DH" },
+        { name: "Rinçage", duration: "", price: "dès 100 DH" },
+        { name: "Shampoing normal", duration: "", price: "20 DH" },
+        { name: "Shampoing spécial", duration: "", price: "30 DH" },
+        { name: "Shampoing sans sulfate", duration: "", price: "50 DH" },
+        { name: "Manucure Russe", duration: "", price: "70 DH" },
+        { name: "Manucure Spa", duration: "", price: "100 DH" },
+        { name: "Pose vernis normal", duration: "", price: "50 DH" },
+        { name: "Pose permanent (Semilac)", duration: "", price: "100 DH" },
+        { name: "Pose permanent (avec capsule)", duration: "", price: "150 DH" },
+        { name: "Gel sans capsule", duration: "", price: "200 DH" },
+        { name: "Gel avec capsule", duration: "", price: "300 DH" },
+        { name: "Biab", duration: "", price: "250 - 350 DH" },
+        { name: "Pédicure Russe", duration: "", price: "100 DH" },
+        { name: "Pédicure Spa", duration: "", price: "200 - 250 DH" },
+        { name: "Pédicure Médicale", duration: "", price: "300 - 400 DH" },
       ]
     },
     {
-      id: "body",
+      id: "esthetique",
+      title: "Esthétique & <i>Massages</i>",
+      description: "Révélez votre éclat naturel grâce à nos soins du visage sur-mesure et abandonnez-vous à une relaxation profonde avec nos massages exclusifs.",
+      image: "/images/spa-tanger-massage.png",
+      services: [
+        { name: "Soin de visage normale", duration: "", price: "250 DH" },
+        { name: "Soin de visage Filorga", duration: "", price: "400 - 500 DH" },
+        { name: "Hydrafacial", duration: "", price: "300 - 500 DH" },
+        { name: "Head-Spa", duration: "", price: "Sur demande" },
+        { name: "Lash lift / Brow lift", duration: "", price: "200 DH" },
+        { name: "Faux cils", duration: "", price: "100 DH" },
+        { name: "Faux cils permanent", duration: "", price: "300 - 500 DH" },
+        { name: "Harqous", duration: "", price: "dès 80 DH" },
+        { name: "Épilation complète", duration: "", price: "200 DH" },
+        { name: "Épilation avec Maillot", duration: "", price: "300 DH" },
+        { name: "Duvet", duration: "", price: "20 DH" },
+        { name: "Sourcils", duration: "", price: "30 DH" },
+        { name: "Massage relaxant", duration: "", price: "250 - 400 DH" },
+        { name: "Massage chaud", duration: "", price: "300 - 500 DH" },
+      ]
+    },
+    {
+      id: "hammam",
       title: "Ancestral <i>Hammam</i>",
-      description: "Experience the pinnacle of Moroccan wellness. Our traditional Tanger hammam rituals detoxify the body and clarify the mind using time-honored techniques.",
+      description: "Vivez l'essence du bien-être marocain. Nos rituels de hammam traditionnel à Tanger purifient le corps et apaisent l'esprit.",
       image: "/images/spa-tanger-relax.png",
       services: [
-        { name: "Royal Hammam Ritual", duration: "60 Min", price: "$110" },
-        { name: "Eucalyptus Body Scrub", duration: "45 Min", price: "$90" },
-        { name: "Argan Oil Body Wrap", duration: "60 Min", price: "$130" },
-        { name: "The Total Reset", duration: "120 Min", price: "$250" },
+        { name: "Hammam Classic", duration: "", price: "100 DH" },
+        { name: "Hammam Oriental", duration: "", price: "250 DH" },
+        { name: "Hammam Sehraoui", duration: "", price: "300 DH" },
+        { name: "Hammam Royal", duration: "", price: "500 DH" },
+        { name: "Hammam Bubble souffle", duration: "", price: "500 DH" },
       ]
     }
   ];
@@ -130,7 +158,7 @@ export default function ServicesPage() {
                           >
                             <div className="service-details">
                               <span className="service-name">{svc.name}</span>
-                              <span className="service-meta">{svc.duration}</span>
+                              {svc.duration && <span className="service-meta">{svc.duration}</span>}
                             </div>
                             <span className="service-price">{svc.price}</span>
                           </motion.li>
