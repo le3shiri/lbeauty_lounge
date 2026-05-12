@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..800;1,400..800&display=swap');
+
 :root {
+  --font-sans: 'Montserrat', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  
   --color-primary: #D4AF37; /* Rich Gold */
   --color-primary-dark: #AA8C2C;
   --color-primary-light: #F3E5AB;
@@ -130,6 +135,16 @@ a:hover {
 .btn-primary:hover {
   color: #000;
   border-color: var(--color-text-light);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  color: #000;
+  background: var(--color-primary);
 }
 
 /* Animations */

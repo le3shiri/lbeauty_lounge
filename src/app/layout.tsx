@@ -1,16 +1,7 @@
 import type { Metadata } from 'next';
-import { Montserrat, Playfair_Display } from 'next/font/google';
 import './globals.css';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-
-const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-sans' });
-const playfair = Playfair_Display({ 
-  subsets: ['latin'], 
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-serif',
-  style: ['normal', 'italic']
-});
 
 export const metadata: Metadata = {
   title: "Luxe Beauty Lounge | Tanger's Premier Wellness Retreat",
@@ -29,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${playfair.variable}`}>
-      <body className={montserrat.className} style={{ fontFamily: 'var(--font-sans)', background: 'var(--color-bg-dark)', color: 'var(--color-text)' }}>
+    <html lang="en">
+      <body style={{ fontFamily: 'var(--font-sans)', background: 'var(--color-bg-dark)', color: 'var(--color-text)' }}>
         <style dangerouslySetInnerHTML={{__html: `
           h1, h2, h3, h4, h5, h6, .font-serif {
             font-family: var(--font-serif);

@@ -2,61 +2,72 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 import './services.css';
 import PageTransition from '@/components/PageTransition';
 
 export default function ServicesPage() {
+  const [activeCategory, setActiveCategory] = useState("coiffure");
+
   const categories = [
     {
       id: "coiffure",
-      title: "Coiffure & <i>Onglerie</i>",
-      description: "Sublimez votre beauté avec notre expertise en coiffure et en soins des ongles. Des brushings parfaits aux manucures russes, chaque détail compte.",
+      title: "Coiffure & <i>Soins</i>",
+      description: "L'art du brushing et de la coloration sublimé par notre expertise.",
       image: "/images/spa-tanger-facial.png",
       services: [
-        { name: "Broching normale", duration: "", price: "50 - 80 DH" },
-        { name: "Broching bouclé", duration: "", price: "50 - 100 DH" },
-        { name: "Coloration", duration: "", price: "dès 100 DH" },
-        { name: "Soin capillaire", duration: "", price: "200 - 400 DH" },
-        { name: "Lissage", duration: "", price: "dès 800 DH" },
-        { name: "Coupe", duration: "", price: "50 - 100 DH" },
-        { name: "Rinçage", duration: "", price: "dès 100 DH" },
-        { name: "Shampoing normal", duration: "", price: "20 DH" },
-        { name: "Shampoing spécial", duration: "", price: "30 DH" },
-        { name: "Shampoing sans sulfate", duration: "", price: "50 DH" },
-        { name: "Manucure Russe", duration: "", price: "70 DH" },
-        { name: "Manucure Spa", duration: "", price: "100 DH" },
-        { name: "Pose vernis normal", duration: "", price: "50 DH" },
-        { name: "Pose permanent (Semilac)", duration: "", price: "100 DH" },
-        { name: "Pose permanent (avec capsule)", duration: "", price: "150 DH" },
-        { name: "Gel sans capsule", duration: "", price: "200 DH" },
-        { name: "Gel avec capsule", duration: "", price: "300 DH" },
-        { name: "Biab", duration: "", price: "250 - 350 DH" },
-        { name: "Pédicure Russe", duration: "", price: "100 DH" },
-        { name: "Pédicure Spa", duration: "", price: "200 - 250 DH" },
-        { name: "Pédicure Médicale", duration: "", price: "300 - 400 DH" },
+        { name: "Brushing normale", price: "50 - 80 DH" },
+        { name: "Brushing bouclé", price: "50 - 100 DH" },
+        { name: "Coloration", price: "dès 100 DH", badge: "Populaire" },
+        { name: "Soin capillaire", price: "200 - 400 DH" },
+        { name: "Lissage", price: "dès 800 DH", badge: "Premium" },
+        { name: "Coupe", price: "50 - 100 DH" },
+        { name: "Rinçage", price: "dès 100 DH" },
+        { name: "Shampoing normal", price: "20 DH" },
+        { name: "Shampoing spécial", price: "30 DH" },
+        { name: "Shampoing sans sulfate", price: "50 DH" },
+      ]
+    },
+    {
+      id: "onglerie",
+      title: "Onglerie <i>Luxe</i>",
+      description: "Des mains et des pieds parfaits avec nos rituels de manucure et pédicure russe.",
+      image: "/images/spa-tanger-relax.png",
+      services: [
+        { name: "Manucure Russe", price: "70 DH", badge: "Best Seller" },
+        { name: "Manucure Spa", price: "100 DH" },
+        { name: "Pose vernis normal", price: "50 DH" },
+        { name: "Pose permanent (Semilac)", price: "100 DH" },
+        { name: "Pose permanent (avec capsule)", price: "150 DH" },
+        { name: "Gel sans capsule", price: "200 DH" },
+        { name: "Gel avec capsule", price: "300 DH" },
+        { name: "Biab", price: "250 - 350 DH" },
+        { name: "Pédicure Russe", price: "100 DH" },
+        { name: "Pédicure Spa", price: "200 - 250 DH" },
+        { name: "Pédicure Médicale", price: "300 - 400 DH" },
       ]
     },
     {
       id: "esthetique",
-      title: "Esthétique & <i>Massages</i>",
-      description: "Révélez votre éclat naturel grâce à nos soins du visage sur-mesure et abandonnez-vous à une relaxation profonde avec nos massages exclusifs.",
+      title: "Esthétique & <i>Massage</i>",
+      description: "Révélez votre éclat et libérez les tensions.",
       image: "/images/spa-tanger-massage.png",
       services: [
-        { name: "Soin de visage normale", duration: "", price: "250 DH" },
-        { name: "Soin de visage Filorga", duration: "", price: "400 - 500 DH" },
-        { name: "Hydrafacial", duration: "", price: "300 - 500 DH" },
-        { name: "Head-Spa", duration: "", price: "Sur demande" },
-        { name: "Lash lift / Brow lift", duration: "", price: "200 DH" },
-        { name: "Faux cils", duration: "", price: "100 DH" },
-        { name: "Faux cils permanent", duration: "", price: "300 - 500 DH" },
-        { name: "Harqous", duration: "", price: "dès 80 DH" },
-        { name: "Épilation complète", duration: "", price: "200 DH" },
-        { name: "Épilation avec Maillot", duration: "", price: "300 DH" },
-        { name: "Duvet", duration: "", price: "20 DH" },
-        { name: "Sourcils", duration: "", price: "30 DH" },
-        { name: "Massage relaxant", duration: "", price: "250 - 400 DH" },
-        { name: "Massage chaud", duration: "", price: "300 - 500 DH" },
+        { name: "Soin de visage normale", price: "250 DH" },
+        { name: "Soin de visage Filorga", price: "400 - 500 DH", badge: "Expert" },
+        { name: "Hydrafacial", price: "300 - 500 DH", badge: "Hot" },
+        { name: "Lash lift / Brow lift", price: "200 DH" },
+        { name: "Faux cils", price: "100 DH" },
+        { name: "Faux cils permanent", price: "300 - 500 DH" },
+        { name: "Harqous", price: "dès 80 DH" },
+        { name: "Épilation complète", price: "200 DH" },
+        { name: "Épilation avec Maillot", price: "300 DH" },
+        { name: "Duvet", price: "20 DH" },
+        { name: "Sourcils", price: "30 DH" },
+        { name: "Massage relaxant", price: "250 - 400 DH", badge: "Détente" },
+        { name: "Massage chaud", price: "300 - 500 DH" },
+        { name: "Head-Spa", price: "Sur demande" },
       ]
     },
     {
@@ -65,26 +76,31 @@ export default function ServicesPage() {
       description: "Vivez l'essence du bien-être marocain. Nos rituels de hammam traditionnel à Tanger purifient le corps et apaisent l'esprit.",
       image: "/images/spa-tanger-relax.png",
       services: [
-        { name: "Hammam Classic", duration: "", price: "100 DH" },
-        { name: "Hammam Oriental", duration: "", price: "250 DH" },
-        { name: "Hammam Sehraoui", duration: "", price: "300 DH" },
-        { name: "Hammam Royal", duration: "", price: "500 DH" },
-        { name: "Hammam Bubble souffle", duration: "", price: "500 DH" },
+        { name: "Hammam Classic", price: "100 DH" },
+        { name: "Hammam Oriental", price: "250 DH", badge: "Tradition" },
+        { name: "Hammam Sehraoui", price: "300 DH" },
+        { name: "Hammam Royal", price: "500 DH", badge: "Luxe" },
+        { name: "Hammam Bubble souffle", price: "500 DH" },
       ]
     }
   ];
 
-  const fadeInUp: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
-        duration: 0.8, 
-        ease: [0.22, 1, 0.36, 1] 
-      } 
-    }
-  };
+  // Simple scroll spy for active category
+  useEffect(() => {
+    const handleScroll = () => {
+      const offsets = categories.map(cat => {
+        const el = document.getElementById(cat.id);
+        return { id: cat.id, offset: el?.offsetTop || 0 };
+      });
+
+      const scrollPos = window.scrollY + 200;
+      const current = offsets.reverse().find(o => scrollPos >= o.offset);
+      if (current) setActiveCategory(current.id);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <PageTransition>
@@ -115,63 +131,78 @@ export default function ServicesPage() {
           </div>
         </section>
 
+        {/* Sticky Sub-Nav */}
+        <div className="category-nav-wrapper">
+          <div className="container">
+            <nav className="category-nav">
+              {categories.map(cat => (
+                <button 
+                  key={cat.id}
+                  className={`category-nav-link ${activeCategory === cat.id ? 'active' : ''}`}
+                  onClick={() => {
+                    document.getElementById(cat.id)?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  {cat.id}
+                </button>
+              ))}
+            </nav>
+          </div>
+        </div>
+
         {/* Categories */}
         <div className="categories-container">
-          {categories.map((cat, idx) => (
-            <section key={cat.id} className="category-block">
+          {categories.map((cat) => (
+            <section key={cat.id} id={cat.id} className="category-block">
               <div className="container">
-                <div className={`category-flex ${idx % 2 !== 0 ? 'flex-row-reverse' : ''}`} style={{ flexDirection: idx % 2 !== 0 ? 'row-reverse' : 'row' }}>
-                  
-                  <motion.div 
-                    className="category-image-wrap"
-                    initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1 }}
+                
+                <div className="category-header">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                   >
-                    <div className="category-image-main">
-                      <Image src={cat.image} alt={cat.title} fill style={{ objectFit: 'cover' }} />
-                    </div>
-                  </motion.div>
-
-                  <motion.div 
-                    className="category-info"
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    variants={fadeInUp}
-                  >
-                    <div className="category-number">0{idx + 1}</div>
                     <h2 className="font-serif" dangerouslySetInnerHTML={{ __html: cat.title }}></h2>
                     <p className="description">{cat.description}</p>
-                    
-                    <div className="service-menu">
-                      <ul className="service-menu-list">
-                        {cat.services.map((svc, sIdx) => (
-                          <motion.li 
-                            key={sIdx} 
-                            className="service-menu-item"
-                            initial={{ opacity: 0, x: 20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 0.1 * sIdx }}
-                            viewport={{ once: true }}
-                          >
-                            <div className="service-details">
-                              <span className="service-name">{svc.name}</span>
-                              {svc.duration && <span className="service-meta">{svc.duration}</span>}
-                            </div>
-                            <span className="service-price">{svc.price}</span>
-                          </motion.li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div style={{ marginTop: '50px' }}>
-                      <Link href="/booking" className="btn btn-primary">Book This Category</Link>
-                    </div>
                   </motion.div>
-
                 </div>
+
+                <div className="category-accent-image">
+                  <Image src={cat.image} alt={cat.title} fill style={{ objectFit: 'cover' }} />
+                </div>
+
+                <div className="service-grid">
+                  {/* Split services into two columns for desktop */}
+                  {[0, 1].map(colIdx => (
+                    <div key={colIdx} className="service-menu-column">
+                      {cat.services.filter((_, i) => i % 2 === colIdx).map((svc, sIdx) => (
+                        <motion.div 
+                          key={sIdx} 
+                          className="service-item"
+                          initial={{ opacity: 0, y: 10 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.05 * sIdx }}
+                          viewport={{ once: true }}
+                        >
+                          <div className="service-top-row">
+                            <span className="service-title">{svc.name}</span>
+                            <div className="service-dots"></div>
+                            <span className="service-price-tag">{svc.price}</span>
+                          </div>
+                          <div className="service-meta-row">
+                            {svc.badge && <span className="service-badge">{svc.badge}</span>}
+                            {svc.desc && <span className="service-desc">{svc.desc}</span>}
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="text-center" style={{ marginTop: '60px' }}>
+                  <Link href="/booking" className="btn btn-primary">Book Now</Link>
+                </div>
+
               </div>
             </section>
           ))}
@@ -180,7 +211,7 @@ export default function ServicesPage() {
         {/* Final CTA */}
         <section className="services-cta">
           <div className="container">
-            <h2 className="font-serif" style={{ fontSize: '48px', marginBottom: '30px' }}>Elevate Your <i>State</i></h2>
+            <h2 className="font-serif" style={{ fontSize: 'clamp(32px, 5vw, 48px)', marginBottom: '30px' }}>Elevate Your <i>State</i></h2>
             <p style={{ color: '#aaa', marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px' }}>Our specialists are ready to guide you through a personalized wellness journey in Tanger.</p>
             <Link href="/booking" className="btn btn-outline">Schedule Consultation</Link>
           </div>
