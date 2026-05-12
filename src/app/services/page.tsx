@@ -7,10 +7,25 @@ import { useState, useEffect } from 'react';
 import './services.css';
 import PageTransition from '@/components/PageTransition';
 
+interface Service {
+  name: string;
+  price: string;
+  desc?: string;
+  badge?: string;
+}
+
+interface Category {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  services: Service[];
+}
+
 export default function ServicesPage() {
   const [activeCategory, setActiveCategory] = useState("coiffure");
 
-  const categories = [
+  const categories: Category[] = [
     {
       id: "coiffure",
       title: "Coiffure & <i>Soins</i>",

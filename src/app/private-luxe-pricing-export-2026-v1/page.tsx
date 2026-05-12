@@ -4,8 +4,14 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import './instagram-pricing.css';
 
+interface Service {
+  name: string;
+  price: string;
+  badge?: string;
+}
+
 export default function InstagramPricingPage() {
-  const services = [
+  const services: Service[] = [
     { name: "Hammam Classic", price: "100 DH" },
     { name: "Hammam Sehraoui", price: "300 DH" },
     { name: "Hammam Bubble souffle", price: "500 DH" },
