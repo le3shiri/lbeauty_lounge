@@ -35,7 +35,7 @@ export default function ServicesPage() {
         { name: "Brushing normale", price: "50 - 80 DH" },
         { name: "Brushing bouclé", price: "50 - 100 DH" },
         { name: "Coloration", price: "dès 100 DH", badge: "Populaire" },
-        { name: "Soin capillaire", price: "200 - 400 DH" },
+        { name: "Soin de cheveux", price: "200 - 500 DH", desc: "gamme loreal expert" },
         { name: "Lissage", price: "dès 800 DH", badge: "Premium" },
         { name: "Coupe", price: "50 - 100 DH" },
         { name: "Rinçage", price: "dès 100 DH" },
@@ -70,7 +70,7 @@ export default function ServicesPage() {
       image: "/images/spa-tanger-massage.png",
       services: [
         { name: "Soin de visage normale", price: "250 DH" },
-        { name: "Soin de visage Filorga", price: "400 - 500 DH", badge: "Expert" },
+        { name: "Soin de visage Filorga", price: "500 DH", desc: "avec hydrafacial", badge: "Expert" },
         { name: "Hydrafacial", price: "300 - 500 DH", badge: "Hot" },
         { name: "Lash lift / Brow lift", price: "200 DH" },
         { name: "Faux cils", price: "100 DH" },
@@ -80,9 +80,11 @@ export default function ServicesPage() {
         { name: "Épilation avec Maillot", price: "300 DH" },
         { name: "Duvet", price: "20 DH" },
         { name: "Sourcils", price: "30 DH" },
-        { name: "Massage relaxant", price: "250 - 400 DH", badge: "Détente" },
+        { name: "Massage relaxant", price: "200 DH", desc: "1h", badge: "Détente" },
+        { name: "Massage médicale", price: "300 DH", desc: "45 min" },
+        { name: "Massage maderant (zone)", price: "400 DH", desc: "30 min" },
         { name: "Massage chaud", price: "300 - 500 DH" },
-        { name: "Head-Spa", price: "Sur demande" },
+        { name: "Head-Spa", price: "350 DH", desc: "30 min" },
       ]
     },
     {
@@ -91,11 +93,11 @@ export default function ServicesPage() {
       description: "Vivez l'essence du bien-être marocain. Nos rituels de hammam traditionnel à Tanger purifient le corps et apaisent l'esprit.",
       image: "/images/spa-tanger-relax.png",
       services: [
-        { name: "Hammam Classic", price: "100 DH" },
-        { name: "Hammam Oriental", price: "250 DH", badge: "Tradition" },
-        { name: "Hammam Sehraoui", price: "300 DH" },
-        { name: "Hammam Royal", price: "500 DH", badge: "Luxe" },
-        { name: "Hammam Bubble souffle", price: "500 DH" },
+        { name: "Hammam Basic", price: "100 DH", desc: "sans produit" },
+        { name: "Hammam Oriental", price: "250 DH", desc: "gant + shampoing + bain douche + 10 min massage", badge: "Tradition" },
+        { name: "Hammam Sehraoui", price: "300 DH", desc: "gant + shampoing + bain douche + massage et envlopement nila" },
+        { name: "Hammam Bubble Souffle", price: "350 DH", desc: "gant + shampoing natus + bain douche natus + 20 min massage" },
+        { name: "Hammam Luxe", price: "500 DH", desc: "gant + shampoing natus + bain douche natus + 45 min massage", badge: "Luxe" },
       ]
     }
   ];
