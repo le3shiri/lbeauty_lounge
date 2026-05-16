@@ -41,7 +41,7 @@ export default function Navigation() {
           transition={{ duration: 0.8 }}
         >
           <Link href="/" className="logo">
-            <Image src="/images/logoo.png" alt="Luxe Beauty Lounge Logo" width={110} height={35} style={{ objectFit: 'contain' }} />
+            <Image src="/images/logoo.png" alt="Luxe Beauty Lounge Logo" width={180} height={90} style={{ objectFit: 'contain' }} />
           </Link>
         </motion.div>
 

@@ -7,6 +7,7 @@ import PageTransition from '@/components/PageTransition';
 
 export default function BookingPage() {
   const [step, setStep] = useState(1);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedService, setSelectedService] = useState<string | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
 
@@ -76,16 +77,74 @@ export default function BookingPage() {
 
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: ''
   });
 
-  const services = [
-    { id: 'hammam_classic', name: 'Hammam Classic', duration: '', price: '100 DH' },
-    { id: 'hammam_oriental', name: 'Hammam Oriental', duration: '', price: '250 DH' },
-    { id: 'hammam_sehraoui', name: 'Hammam Sehraoui', duration: '', price: '300 DH' },
-    { id: 'hammam_royal', name: 'Hammam Royal', duration: '', price: '500 DH' },
-    { id: 'hammam_bubble', name: 'Hammam Bubble souffle', duration: '', price: '500 DH' },
+  const categories = [
+    {
+      id: "coiffure",
+      title: "Coiffure & Soins",
+      services: [
+        { id: "shampoing_normal", name: "Shampoing normal", price: "20 DH" },
+        { id: "shampoing_special", name: "Shampoing spécial", price: "30 DH" },
+        { id: "shampoing_sans_sulfate", name: "Shampoing sans sulfate", price: "50 DH" },
+        { id: "brushing_normale", name: "Brushing normale", price: "50 - 80 DH" },
+        { id: "brushing_boucle", name: "Brushing bouclé", price: "50 - 100 DH" },
+        { id: "coupe", name: "Coupe", price: "50 - 100 DH" },
+        { id: "coloration", name: "Coloration", price: "dès 100 DH" },
+        { id: "rincage", name: "Rinçage", price: "dès 100 DH" },
+        { id: "soin_capillaire", name: "Soin capillaire", price: "200 - 400 DH" },
+        { id: "lissage", name: "Lissage", price: "dès 800 DH" },
+      ]
+    },
+    {
+      id: "onglerie",
+      title: "Onglerie Luxe",
+      services: [
+        { id: "pose_vernis_normal", name: "Pose vernis normal", price: "50 DH" },
+        { id: "manucure_russe", name: "Manucure Russe", price: "70 DH" },
+        { id: "manucure_spa", name: "Manucure Spa", price: "100 DH" },
+        { id: "pose_permanent_semilac", name: "Pose permanent (Semilac)", price: "100 DH" },
+        { id: "pedicure_russe", name: "Pédicure Russe", price: "100 DH" },
+        { id: "pose_permanent_capsule", name: "Pose permanent (avec capsule)", price: "150 DH" },
+        { id: "pedicure_spa", name: "Pédicure Spa", price: "200 - 250 DH" },
+        { id: "gel_sans_capsule", name: "Gel sans capsule", price: "200 DH" },
+        { id: "biab", name: "Biab", price: "250 - 350 DH" },
+        { id: "gel_avec_capsule", name: "Gel avec capsule", price: "300 DH" },
+        { id: "pedicure_medicale", name: "Pédicure Médicale", price: "300 - 400 DH" },
+      ]
+    },
+    {
+      id: "esthetique",
+      title: "Esthétique & Massage",
+      services: [
+        { id: "duvet", name: "Duvet", price: "20 DH" },
+        { id: "sourcils", name: "Sourcils", price: "30 DH" },
+        { id: "harqous", name: "Harqous", price: "dès 80 DH" },
+        { id: "faux_cils", name: "Faux cils", price: "100 DH" },
+        { id: "lash_lift", name: "Lash lift / Brow lift", price: "200 DH" },
+        { id: "epilation_complete", name: "Épilation complète", price: "200 DH" },
+        { id: "massage_relaxant", name: "Massage relaxant", price: "250 - 400 DH" },
+        { id: "soin_visage_normale", name: "Soin de visage normale", price: "250 DH" },
+        { id: "epilation_maillot", name: "Épilation avec Maillot", price: "300 DH" },
+        { id: "faux_cils_permanent", name: "Faux cils permanent", price: "300 - 500 DH" },
+        { id: "massage_chaud", name: "Massage chaud", price: "300 - 500 DH" },
+        { id: "hydrafacial", name: "Hydrafacial", price: "300 - 500 DH" },
+        { id: "soin_visage_filorga", name: "Soin de visage Filorga", price: "400 - 500 DH" },
+        { id: "head_spa", name: "Head-Spa", price: "Sur demande" },
+      ]
+    },
+    {
+      id: "hammam",
+      title: "Ancestral Hammam",
+      services: [
+        { id: "hammam_classic", name: "Hammam Classic", price: "100 DH" },
+        { id: "hammam_oriental", name: "Hammam Oriental", price: "250 DH" },
+        { id: "hammam_sehraoui", name: "Hammam Sehraoui", price: "300 DH" },
+        { id: "hammam_royal", name: "Hammam Royal", price: "500 DH" },
+        { id: "hammam_bubble", name: "Hammam Bubble souffle", price: "500 DH" },
+      ]
+    }
   ];
 
   const timeSlots = ['09:00', '10:30', '12:00', '14:00', '15:30', '17:00', '18:30', '20:00'];
@@ -95,7 +154,8 @@ export default function BookingPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const service = services.find(s => s.id === selectedService);
+    const allServices = categories.flatMap(cat => cat.services);
+    const service = allServices.find(s => s.id === selectedService);
     
     const message = `*New Booking Request - Luxe Beauty Lounge*%0A%0A` +
       `*Service:* ${service?.name}%0A` +
@@ -103,7 +163,6 @@ export default function BookingPage() {
       `*Time:* ${selectedTime}%0A%0A` +
       `*Client Details:*%0A` +
       `- Name: ${formData.name}%0A` +
-      `- Email: ${formData.email}%0A` +
       `- Phone: ${formData.phone}%0A%0A` +
       `Please confirm my reservation. Thank you!`;
 
@@ -163,26 +222,58 @@ export default function BookingPage() {
           <div className="booking-card glass-panel">
             <AnimatePresence mode="wait">
               
-              {/* STEP 1: SERVICE */}
+              {/* STEP 1: CATEGORY & SERVICE */}
               {step === 1 && (
                 <motion.div key="step1" variants={stepVariants} initial="initial" animate="animate" exit="exit">
                   <h2 className="font-serif">Choose a <i>Ritual</i></h2>
-                  <div className="booking-service-grid">
-                    {services.map((svc) => (
-                      <div 
-                        key={svc.id} 
-                        className={`booking-service-item ${selectedService === svc.id ? 'selected' : ''}`}
-                        onClick={() => setSelectedService(svc.id)}
+                  
+                  {/* Category Selection */}
+                  <div className="booking-category-tabs">
+                    {categories.map((cat) => (
+                      <button 
+                        key={cat.id}
+                        className={`category-tab ${selectedCategory === cat.id ? 'active' : ''}`}
+                        onClick={() => {
+                          setSelectedCategory(cat.id);
+                          setSelectedService(null);
+                        }}
                       >
-                        <div className="svc-info">
-                          <h4>{svc.name}</h4>
-                          {svc.duration && <span>{svc.duration}</span>}
-                        </div>
-                        <span className="svc-price">{svc.price}</span>
-                      </div>
+                        {cat.title}
+                      </button>
                     ))}
                   </div>
-                  <div className="booking-nav-btns" style={{ justifyContent: 'flex-end' }}>
+
+                  {/* Service Selection */}
+                  <AnimatePresence mode="wait">
+                    {selectedCategory && (
+                      <motion.div 
+                        key={selectedCategory}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        className="booking-service-grid"
+                      >
+                        {categories.find(c => c.id === selectedCategory)?.services.map((svc) => (
+                          <div 
+                            key={svc.id} 
+                            className={`booking-service-item ${selectedService === svc.id ? 'selected' : ''}`}
+                            onClick={() => setSelectedService(svc.id)}
+                          >
+                            <div className="svc-info">
+                              <h4>{svc.name}</h4>
+                            </div>
+                            <span className="svc-price">{svc.price}</span>
+                          </div>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  {!selectedCategory && (
+                    <div className="select-prompt">Please select a category above to view services.</div>
+                  )}
+
+                  <div className="booking-nav-btns" style={{ justifyContent: 'flex-end', marginTop: '40px' }}>
                     <button className="btn btn-primary" onClick={nextStep} disabled={!selectedService}>Continue to Schedule</button>
                   </div>
                 </motion.div>
@@ -244,16 +335,6 @@ export default function BookingPage() {
                         onChange={(e) => setFormData({...formData, name: e.target.value})}
                         style={{ width: '100%', background: 'none', border: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '18px', padding: '15px 0', outline: 'none' }} 
                         placeholder="Full Name" 
-                        required 
-                      />
-                    </div>
-                    <div className="form-group" style={{ marginBottom: '40px' }}>
-                      <input 
-                        type="email" 
-                        value={formData.email}
-                        onChange={(e) => setFormData({...formData, email: e.target.value})}
-                        style={{ width: '100%', background: 'none', border: 'none', borderBottom: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '18px', padding: '15px 0', outline: 'none' }} 
-                        placeholder="Email Address" 
                         required 
                       />
                     </div>
