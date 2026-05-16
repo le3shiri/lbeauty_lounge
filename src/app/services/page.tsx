@@ -75,7 +75,7 @@ export default function ServicesPage() {
         { name: "Faux cils", price: "100 DH" },
         { name: "Lash lift / Brow lift", price: "200 DH" },
         { name: "Massage relaxant", price: "200 DH", desc: "1h", badge: "Détente" },
-        { id: "epilation_complete", name: "Épilation complète", price: "200 DH" },
+        { name: "Épilation complète", price: "200 DH" },
         { name: "Soin de visage normale", price: "250 DH" },
         { name: "Massage médicale", price: "300 DH", desc: "45 min" },
         { name: "Épilation avec Maillot", price: "300 DH" },
