@@ -189,30 +189,25 @@ export default function ServicesPage() {
                 </div>
 
                 <div className="service-grid">
-                  {/* Split services into two columns for desktop */}
-                  {[0, 1].map(colIdx => (
-                    <div key={colIdx} className="service-menu-column">
-                      {cat.services.filter((_, i) => i % 2 === colIdx).map((svc, sIdx) => (
-                        <motion.div 
-                          key={sIdx} 
-                          className="service-item"
-                          initial={{ opacity: 0, y: 10 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.05 * sIdx }}
-                          viewport={{ once: true }}
-                        >
-                          <div className="service-top-row">
-                            <span className="service-title">{svc.name}</span>
-                            <div className="service-dots"></div>
-                            <span className="service-price-tag">{svc.price}</span>
-                          </div>
-                          <div className="service-meta-row">
-                            {svc.badge && <span className="service-badge">{svc.badge}</span>}
-                            {svc.desc && <span className="service-desc">{svc.desc}</span>}
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
+                  {cat.services.map((svc, sIdx) => (
+                    <motion.div 
+                      key={sIdx} 
+                      className="service-item"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.05 * sIdx }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="service-top-row">
+                        <span className="service-title">{svc.name}</span>
+                        <div className="service-dots"></div>
+                        <span className="service-price-tag">{svc.price}</span>
+                      </div>
+                      <div className="service-meta-row">
+                        {svc.badge && <span className="service-badge">{svc.badge}</span>}
+                        {svc.desc && <span className="service-desc">{svc.desc}</span>}
+                      </div>
+                    </motion.div>
                   ))}
                 </div>
 
