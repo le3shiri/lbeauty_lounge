@@ -32,12 +32,12 @@ export default function ServicesPage() {
       description: "L'art du brushing et de la coloration sublimé par notre expertise.",
       image: "/images/spa-tanger-facial.png",
       services: [
-        { name: "Shampoing normal", price: "20 DH" },
-        { name: "Shampoing spécial", price: "30 DH" },
-        { name: "Shampoing sans sulfate", price: "50 DH" },
+        { name: "Shampoing normal", price: "30 DH" },
+        { name: "Shampoing spécial", price: "50 DH" },
         { name: "Brushing normale", price: "50 - 80 DH" },
         { name: "Brushing bouclé", price: "50 - 100 DH" },
         { name: "Coupe", price: "50 - 100 DH" },
+        { name: "Shampoing sans sulfate", price: "70 DH" },
         { name: "Coloration", price: "dès 100 DH", badge: "Populaire" },
         { name: "Rinçage", price: "dès 100 DH" },
         { name: "Soin de cheveux", price: "200 - 500 DH", desc: "gamme loreal expert" },
@@ -93,9 +93,9 @@ export default function ServicesPage() {
       description: "Vivez l'essence du bien-être marocain. Nos rituels de hammam traditionnel à Tanger purifient le corps et apaisent l'esprit.",
       image: "/images/spa-tanger-relax.png",
       services: [
-        { name: "Hammam Basic", price: "100 DH", desc: "sans produit" },
+        { name: "Hammam Basic", price: "150 DH", desc: "gant gommage shompoine normal" },
         { name: "Hammam Oriental", price: "250 DH", desc: "gant + shampoing + bain douche + 10 min massage", badge: "Tradition" },
-        { name: "Hammam Sehraoui", price: "300 DH", desc: "gant + shampoing + bain douche + massage et envlopement nila" },
+        { name: "Hammam Sehraoui", price: "300 DH", desc: "gant + shampoing + bain douche + massage 15 min et envlopement nila" },
         { name: "Hammam Bubble Souffle", price: "350 DH", desc: "gant + shampoing natus + bain douche natus + 20 min massage" },
         { name: "Hammam Luxe", price: "500 DH", desc: "gant + shampoing natus + bain douche natus + 45 min massage", badge: "Luxe" },
       ]
