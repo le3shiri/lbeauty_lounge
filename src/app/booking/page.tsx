@@ -93,7 +93,7 @@ export default function BookingPage() {
         { id: "coupe", name: "Coupe", price: "50 - 100 DH" },
         { id: "coloration", name: "Coloration", price: "dès 100 DH" },
         { id: "rincage", name: "Rinçage", price: "dès 100 DH" },
-        { id: "soin_capillaire", name: "Soin capillaire", price: "200 - 400 DH" },
+        { id: "soin_de_cheveux", name: "Soin de cheveux", price: "200 - 500 DH" },
         { id: "lissage", name: "Lissage", price: "dès 800 DH" },
       ]
     },
@@ -123,26 +123,28 @@ export default function BookingPage() {
         { id: "harqous", name: "Harqous", price: "dès 80 DH" },
         { id: "faux_cils", name: "Faux cils", price: "100 DH" },
         { id: "lash_lift", name: "Lash lift / Brow lift", price: "200 DH" },
+        { id: "massage_relaxant", name: "Massage relaxant", price: "200 DH" },
         { id: "epilation_complete", name: "Épilation complète", price: "200 DH" },
-        { id: "massage_relaxant", name: "Massage relaxant", price: "250 - 400 DH" },
         { id: "soin_visage_normale", name: "Soin de visage normale", price: "250 DH" },
+        { id: "massage_medicale", name: "Massage médicale", price: "300 DH" },
         { id: "epilation_maillot", name: "Épilation avec Maillot", price: "300 DH" },
+        { id: "head_spa", name: "Head-Spa", price: "350 DH" },
         { id: "faux_cils_permanent", name: "Faux cils permanent", price: "300 - 500 DH" },
         { id: "massage_chaud", name: "Massage chaud", price: "300 - 500 DH" },
         { id: "hydrafacial", name: "Hydrafacial", price: "300 - 500 DH" },
-        { id: "soin_visage_filorga", name: "Soin de visage Filorga", price: "400 - 500 DH" },
-        { id: "head_spa", name: "Head-Spa", price: "Sur demande" },
+        { id: "massage_maderant", name: "Massage maderant (zone)", price: "400 DH" },
+        { id: "soin_visage_filorga", name: "Soin de visage Filorga", price: "500 DH" },
       ]
     },
     {
       id: "hammam",
       title: "Ancestral Hammam",
       services: [
-        { id: "hammam_classic", name: "Hammam Classic", price: "100 DH" },
+        { id: "hammam_basic", name: "Hammam Basic", price: "100 DH" },
         { id: "hammam_oriental", name: "Hammam Oriental", price: "250 DH" },
         { id: "hammam_sehraoui", name: "Hammam Sehraoui", price: "300 DH" },
-        { id: "hammam_royal", name: "Hammam Royal", price: "500 DH" },
-        { id: "hammam_bubble", name: "Hammam Bubble souffle", price: "500 DH" },
+        { id: "hammam_bubble", name: "Hammam Bubble Souffle", price: "350 DH" },
+        { id: "hammam_luxe", name: "Hammam Luxe", price: "500 DH" },
       ]
     }
   ];
