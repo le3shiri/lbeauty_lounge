@@ -32,7 +32,8 @@ export default function Footer() {
         <div className="footer-col">
           <h4 className="font-serif">Opening Hours</h4>
           <ul>
-            <li>Mon - Sun: 9:00 AM - 9:00 PM</li>
+            <li>Monday: Closed</li>
+            <li>Tue - Sun: 9:00 AM - 9:00 PM</li>
             <li>Hammam: 10:00 AM - 8:00 PM</li>
           </ul>
         </div>
