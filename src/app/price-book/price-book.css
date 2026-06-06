@@ -1,0 +1,357 @@
+/* Auth Styling */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background: #000;
+}
+
+.auth-form {
+  padding: 3rem;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.auth-input {
+  width: 100%;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: #fff;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.auth-input:focus {
+  outline: none;
+  border-color: #d4af37;
+}
+
+/* Book Backdrop */
+.book-backdrop {
+  background: #050505; /* Deep black backdrop */
+  min-height: 100vh;
+  padding: 3rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-actions {
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #d4af37;
+}
+
+.book-print-btn {
+  font-size: 1.1rem;
+  padding: 0.8rem 2rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+  background: #d4af37;
+  color: #000;
+  border: none;
+}
+.book-print-btn:hover {
+  background: #c3a030;
+}
+
+/* The Physical Book */
+.physical-book {
+  background: transparent;
+  width: 100%;
+  max-width: 850px; /* A4-ish proportions */
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Individual Pages */
+.book-page {
+  background: #0a0a0a; /* Premium Black Page */
+  color: #fff;
+  min-height: 1100px; /* Approximate A4 height ratio */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8), inset 0 0 40px rgba(212, 175, 55, 0.05);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+/* Cover Page */
+.cover-page {
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+}
+
+.cover-inner-border {
+  border: 2px solid #d4af37;
+  outline: 1px solid rgba(212, 175, 55, 0.3);
+  outline-offset: -8px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  text-align: center;
+  background: transparent; /* Remove any white background overlay */
+}
+
+.cover-logo {
+  margin-bottom: 3rem;
+}
+
+.cover-title {
+  font-size: 4.5rem;
+  color: #d4af37; /* Gold */
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cover-divider {
+  width: 80px;
+  height: 2px;
+  background: #d4af37;
+  margin: 2rem auto;
+}
+
+.cover-subtitle {
+  font-size: 1.5rem;
+  color: #aaa;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.cover-year {
+  margin-top: auto;
+  font-family: serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Inner Pages */
+.page-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 70%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-header-img {
+  width: 100%;
+  height: 280px;
+  position: relative;
+  border-bottom: 2px solid #d4af37;
+}
+
+.img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10,10,10,0.1), rgba(10,10,10,0.9));
+}
+
+.section-content {
+  padding: 4rem;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title-wrap {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title-wrap h2 {
+  font-size: 3rem;
+  color: #d4af37; /* Gold */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section-subtitle {
+  color: #aaa;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.service-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.5rem 0;
+}
+
+.service-name {
+  font-size: 1.3rem;
+  color: #fff; /* White */
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.service-dots {
+  flex: 1;
+  border-bottom: 1px dotted rgba(212, 175, 55, 0.4); /* Gold dots */
+  margin: 0 15px;
+  position: relative;
+  top: -6px;
+}
+
+.service-price {
+  font-size: 1.4rem;
+  color: #d4af37; /* Gold */
+  font-weight: bold;
+}
+
+.page-footer {
+  text-align: center;
+  padding: 2rem;
+  color: #555;
+  font-family: serif;
+  font-style: italic;
+  font-size: 1rem;
+  border-top: 1px solid rgba(212, 175, 55, 0.1);
+  margin: 0 4rem;
+}
+
+/* Back Cover */
+.back-cover-page {
+  justify-content: center;
+  align-items: center;
+  background: #050505;
+  color: #d4af37;
+  text-align: center;
+  min-height: 800px;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.back-cover-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.back-cover-inner p {
+  font-family: serif;
+  letter-spacing: 2px;
+  line-height: 2;
+  color: #888;
+}
+
+/* Print Optimizations */
+@media print {
+  @page {
+    margin: 0;
+    size: auto;
+  }
+
+  html, body {
+    background: #0a0a0a !important; /* Force black background for printing */
+    color: #fff !important;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto !important;
+    min-height: 100vh;
+  }
+  
+  .book-backdrop {
+    background: #0a0a0a !important;
+    padding: 0;
+    margin: 0;
+  }
+
+  .print-hide,
+  .auth-container,
+  nav, header, footer {
+    display: none !important;
+  }
+
+  .physical-book {
+    max-width: 100%;
+    gap: 0;
+    display: block !important;
+  }
+
+  .book-page {
+    box-shadow: none;
+    margin: 0;
+    page-break-after: always;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    border: none;
+    overflow: visible !important;
+    display: block !important;
+    min-height: 100vh !important;
+    height: auto !important;
+    position: relative;
+  }
+
+  /* Adjust styles specifically for printing to ensure background images/colors show */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Compact the layout to fit on exactly one A4 page */
+  .book-page {
+    height: 100vh !important;
+    overflow: hidden !important;
+  }
+
+  .section-header-img {
+    height: 180px !important;
+  }
+
+  .section-content {
+    padding: 2rem 3rem !important;
+  }
+
+  .section-title-wrap {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .services-list {
+    gap: 0.8rem !important;
+  }
+
+  .service-name {
+    font-size: 1.15rem !important;
+  }
+
+  .service-price {
+    font-size: 1.25rem !important;
+  }
+
+  .page-footer {
+    padding: 1rem !important;
+    margin: 0 3rem !important;
+  }
+}
