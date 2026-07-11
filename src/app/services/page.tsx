@@ -30,7 +30,7 @@ export default function ServicesPage() {
       id: "coiffure",
       title: "Coiffure & <i>Soins</i>",
       description: "L'art du brushing et de la coloration sublimé par notre expertise.",
-      image: "/images/spa-tanger-facial.png",
+      image: "/images/DSC05586.jpg",
       services: [
         { name: "Shampoing normal", price: "30 DH" },
         { name: "Brushing normale", price: "40 - 80 DH" },
@@ -48,7 +48,7 @@ export default function ServicesPage() {
       id: "onglerie",
       title: "Onglerie <i>Luxe</i>",
       description: "Des mains et des pieds parfaits avec nos rituels de manucure et pédicure russe.",
-      image: "/images/spa-tanger-relax.png",
+      image: "/images/DSC05583.jpg",
       services: [
         { name: "Pose vernis normal", price: "50 DH" },
         { name: "Manucure Normale", price: "70 DH", badge: "Best Seller" },
@@ -69,7 +69,7 @@ export default function ServicesPage() {
       id: "esthetique",
       title: "Esthétique & <i>Massage</i>",
       description: "Révélez votre éclat et libérez les tensions.",
-      image: "/images/spa-tanger-massage.png",
+      image: "/images/DSC05587.jpg",
       services: [
         { name: "Duvet", price: "20 DH" },
         { name: "Sourcils", price: "30 DH" },
@@ -90,7 +90,7 @@ export default function ServicesPage() {
       id: "hammam",
       title: "Ancestral <i>Hammam</i>",
       description: "Vivez l'essence du bien-être marocain. Nos rituels de hammam traditionnel à Tanger purifient le corps et apaisent l'esprit.",
-      image: "/images/spa-tanger-relax.png",
+      image: "/images/DSC05766.jpg",
       services: [
         { name: "Hammam Basic", price: "150 DH", desc: "gant + gommage + shompoine normal" },
         { name: "Hammam Oriental", price: "250 DH", desc: "gant + shampoing + bain douche + 10 min massage", badge: "Tradition" },
@@ -125,7 +125,7 @@ export default function ServicesPage() {
         {/* Cinematic Hero */}
         <section className="services-hero">
           <div className="services-hero-bg">
-            <Image src="/images/spa-tanger-massage.png" alt="Luxe Beauty Lounge Services" fill style={{ objectFit: 'cover' }} priority />
+            <Image src="/images/DSC05768.jpg" alt="Luxe Beauty Lounge Services" fill style={{ objectFit: 'cover' }} priority />
           </div>
           <div className="services-hero-content container">
             <motion.span 

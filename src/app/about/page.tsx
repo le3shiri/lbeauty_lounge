@@ -33,7 +33,7 @@ export default function AboutPage() {
         {/* Cinematic Hero */}
         <section className="about-hero">
           <div className="about-hero-bg">
-            <Image src="/images/spa-tanger-interior.png" alt="Luxe Beauty Lounge Sanctuary" fill style={{ objectFit: 'cover' }} priority />
+            <Image src="/images/DSC05769.jpg" alt="Luxe Beauty Lounge Sanctuary" fill style={{ objectFit: 'cover' }} priority />
           </div>
           <div className="about-hero-content container">
             <motion.h1 
@@ -65,7 +65,7 @@ export default function AboutPage() {
               variants={fadeInUp}
             >
               <div className="about-image-main">
-                <Image src="/images/spa-tanger-interior.png" alt="Spa Tanger Interior" fill style={{ objectFit: 'cover' }} />
+                <Image src="/images/DSC05770.jpg" alt="Luxe Beauty Lounge Interior" fill style={{ objectFit: 'cover' }} />
               </div>
               <motion.div 
                 className="about-image-floating"
@@ -74,7 +74,7 @@ export default function AboutPage() {
                 transition={{ duration: 1, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                <Image src="/images/spa-tanger-massage.png" alt="Premium Massage Tanger" fill style={{ objectFit: 'cover' }} />
+                <Image src="/images/DSC05587.jpg" alt="Premium Massage Tanger" fill style={{ objectFit: 'cover' }} />
               </motion.div>
             </motion.div>
 
@@ -162,7 +162,7 @@ export default function AboutPage() {
                 transition={{ duration: 1 }}
                 viewport={{ once: true }}
               >
-                <Image src="/images/spa-tanger-facial.png" alt="Founder of Luxe Beauty Lounge" fill style={{ objectFit: 'cover' }} className="glass-panel" />
+                <Image src="/images/DSC05583.jpg" alt="Founder of Luxe Beauty Lounge" fill style={{ objectFit: 'cover' }} className="glass-panel" />
               </motion.div>
             </div>
           </div>

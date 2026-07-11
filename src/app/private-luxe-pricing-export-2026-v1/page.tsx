@@ -23,7 +23,7 @@ export default function InstagramPricingPage() {
     <div className="instagram-pricing-page">
       <div className="insta-bg-overlay">
         <Image 
-          src="/images/spa-tanger-interior.png" 
+          src="/images/DSC05769.jpg" 
           alt="Background" 
           fill 
           style={{ objectFit: 'cover', opacity: 0.3 }} 

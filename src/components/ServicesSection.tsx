@@ -10,21 +10,21 @@ const services = [
     id: 'massage',
     title: 'Luxury Massage',
     subtitle: 'Bespoke deep tissue & relaxation',
-    image: '/images/spa-tanger-massage.png',
+    image: '/images/DSC05590.jpg',
     link: '/services/massage'
   },
   {
     id: 'facial',
     title: 'Advanced Facials',
     subtitle: 'Organic anti-aging treatments',
-    image: '/images/spa-tanger-facial.png',
+    image: '/images/DSC05583.jpg',
     link: '/services/facial'
   },
   {
     id: 'body',
     title: 'Body Rituals',
     subtitle: 'Traditional hammam & body wraps',
-    image: '/images/spa-tanger-relax.png',
+    image: '/images/DSC05766.jpg',
     link: '/services/body'
   }
 ];

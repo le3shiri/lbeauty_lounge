@@ -7,7 +7,7 @@ import './social.css';
 const categories: any = {
   coiffure: {
     title: "Coiffure & Soins",
-    image: "/images/spa-tanger-facial.png",
+    image: "/images/DSC05586.jpg",
     services: [
       { name: "Brushing normale", price: "50 - 80 DH" },
       { name: "Brushing bouclé", price: "50 - 100 DH" },
@@ -23,7 +23,7 @@ const categories: any = {
   },
   onglerie: {
     title: "Onglerie Luxe",
-    image: "/images/spa-tanger-relax.png",
+    image: "/images/DSC05583.jpg",
     services: [
       { name: "Manucure Russe", price: "70 DH" },
       { name: "Manucure Spa", price: "100 DH" },
@@ -40,7 +40,7 @@ const categories: any = {
   },
   esthetique: {
     title: "Esthétique & Massage",
-    image: "/images/spa-tanger-massage.png",
+    image: "/images/DSC05587.jpg",
     services: [
       { name: "Soin de visage normale", price: "250 DH" },
       { name: "Soin de visage Filorga", price: "500 DH", desc: "avec hydrafacial" },
@@ -62,7 +62,7 @@ const categories: any = {
   },
   hammam: {
     title: "Ancestral Hammam",
-    image: "/images/spa-tanger-relax.png",
+    image: "/images/DSC05766.jpg",
     services: [
       { name: "Hammam Basic", price: "100 DH", desc: "sans produit" },
       { name: "Hammam Oriental", price: "250 DH", desc: "gant + shampoing + bain douche + 10 min massage" },

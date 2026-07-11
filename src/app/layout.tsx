@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Luxe Beauty Lounge | Premium Wellness',
     description: 'Discover the ultimate luxury spa in Tanger.',
-    images: ['/images/spa-tanger-interior.png']
+    images: ['/images/DSC05769.jpg']
   }
 };
 

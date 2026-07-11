@@ -10,12 +10,20 @@ export default function GalleryPage() {
   const [filter, setFilter] = useState('all');
 
   const images = [
-    { src: "/images/spa-tanger-interior.png", alt: "Sanctuary Pool", category: "interior", title: "Thermal Sanctuary", size: "large" },
-    { src: "/images/spa-tanger-massage.png", alt: "Massage Room", category: "treatments", title: "Healing Suite", size: "small" },
-    { src: "/images/spa-tanger-facial.png", alt: "Facial Care", category: "treatments", title: "Dermal Artistry", size: "small" },
-    { src: "/images/spa-tanger-relax.png", alt: "Hammam Ritual", category: "ritual", title: "Ancestral Steam", size: "large" },
-    { src: "/images/spa-tanger-interior.png", alt: "Lounge Area", category: "interior", title: "Stillness Lounge", size: "medium" },
-    { src: "/images/spa-tanger-massage.png", alt: "Therapy Detail", category: "treatments", title: "Tactile Mastery", size: "medium" },
+    { src: "/images/DSC05769.jpg", alt: "Luxury Suite Interior", category: "interior", title: "Luxury Suite", size: "large" },
+    { src: "/images/DSC05770.jpg", alt: "Spa Room Aerial View", category: "interior", title: "The Sanctuary", size: "small" },
+    { src: "/images/DSC05767.jpg", alt: "Relaxation Lounge", category: "interior", title: "Stillness Lounge", size: "small" },
+    { src: "/images/DSC05768.jpg", alt: "Relaxation Loungers", category: "interior", title: "Serenity Room", size: "large" },
+    { src: "/images/DSC05587.jpg", alt: "Massage Tools", category: "treatments", title: "Tactile Mastery", size: "medium" },
+    { src: "/images/DSC05589.jpg", alt: "Spa Treatment Room", category: "treatments", title: "Healing Suite", size: "small" },
+    { src: "/images/DSC05590.jpg", alt: "Spa Room with Products", category: "treatments", title: "Ritual Essentials", size: "large" },
+    { src: "/images/DSC05763.jpg", alt: "Spa Treatment Room Setup", category: "treatments", title: "The Healing Chamber", size: "small" },
+    { src: "/images/DSC05764.jpg", alt: "Spa Room Ambiance", category: "treatments", title: "Ancestral Glow", size: "medium" },
+    { src: "/images/DSC05765.jpg", alt: "Spa Product Display", category: "treatments", title: "Dermal Artistry", size: "medium" },
+    { src: "/images/DSC05766.jpg", alt: "Spa Room with Lighting", category: "treatments", title: "Golden Hour", size: "large" },
+    { src: "/images/DSC05586.jpg", alt: "Hair Wash Stations", category: "hair", title: "The Hair Studio", size: "medium" },
+    { src: "/images/DSC05583.jpg", alt: "Manicure Tools", category: "nail", title: "Nail Artistry", size: "small" },
+    { src: "/images/DSC05585.jpg", alt: "Nail Station", category: "nail", title: "The Nail Lounge", size: "medium" },
   ];
 
   const filteredImages = filter === 'all' ? images : images.filter(img => img.category === filter);
@@ -77,7 +85,7 @@ export default function GalleryPage() {
         {/* Filters */}
         <section className="container">
           <div className="gallery-filters">
-            {['all', 'interior', 'treatments', 'ritual'].map((cat) => (
+            {['all', 'interior', 'treatments', 'hair', 'nail'].map((cat) => (
               <button 
                 key={cat}
                 className={`filter-btn ${filter === cat ? 'active' : ''}`}

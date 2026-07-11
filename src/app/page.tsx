@@ -18,13 +18,13 @@ export default function Home() {
         {/* Animated Cinematic Panels */}
         <div className="hero-panels-container">
           <div className="hero-panel panel-left">
-            <Image src="/images/spa-tanger-facial.png" alt="Facial Treatment" fill style={{objectFit: 'cover'}} />
+            <Image src="/images/DSC05585.jpg" alt="Nail Lounge" fill style={{objectFit: 'cover'}} />
           </div>
           <div className="hero-panel panel-center">
-            <Image src="/images/spa-tanger-interior.png" alt="Luxury Spa Interior" fill style={{objectFit: 'cover'}} priority />
+            <Image src="/images/DSC05769.jpg" alt="Luxury Spa Interior" fill style={{objectFit: 'cover'}} priority />
           </div>
           <div className="hero-panel panel-right">
-            <Image src="/images/spa-tanger-massage.png" alt="Premium Massage" fill style={{objectFit: 'cover'}} />
+            <Image src="/images/DSC05586.jpg" alt="Hair Studio" fill style={{objectFit: 'cover'}} />
           </div>
         </div>
 
@@ -42,7 +42,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="cta-section section">
         <div className="cta-bg">
-          <Image src="/images/spa-tanger-interior.png" alt="Spa Tanger Interior Booking" fill style={{ objectFit: 'cover' }} />
+          <Image src="/images/DSC05767.jpg" alt="Luxe Beauty Lounge Relaxation" fill style={{ objectFit: 'cover' }} />
           <div className="cta-overlay glass-panel"></div>
         </div>
         <div className="container text-center cta-content">

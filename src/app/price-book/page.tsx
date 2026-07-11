@@ -27,7 +27,7 @@ export default function PriceBookPage() {
     {
       title: "Coiffure & Soins",
       subtitle: "L'art du brushing et de la coloration sublimé par notre expertise.",
-      image: "/images/hero.png",
+      image: "/images/DSC05586.jpg",
       services: [
         { name: "Shampoing normal", price: "30 DH" },
         { name: "Brushing normale", price: "40 - 80 DH" },
@@ -44,7 +44,7 @@ export default function PriceBookPage() {
     {
       title: "Onglerie Luxe",
       subtitle: "Des mains et des pieds parfaits avec nos rituels de manucure et pédicure russe.",
-      image: "/images/spa-tanger-relax.png",
+      image: "/images/DSC05583.jpg",
       services: [
         { name: "Pose vernis normal", price: "50 DH" },
         { name: "Manucure Normale", price: "70 DH" },
@@ -64,7 +64,7 @@ export default function PriceBookPage() {
     {
       title: "Esthétique & Massage",
       subtitle: "Révélez votre éclat et libérez les tensions.",
-      image: "/images/spa-tanger-massage.png",
+      image: "/images/DSC05587.jpg",
       services: [
         { name: "Duvet", price: "20 DH" },
         { name: "Sourcils", price: "30 DH" },
@@ -84,7 +84,7 @@ export default function PriceBookPage() {
     {
       title: "Ancestral Hammam",
       subtitle: "Vivez l'essence du bien-être marocain.",
-      image: "/images/spa-tanger-interior.png",
+      image: "/images/DSC05766.jpg",
       services: [
         { name: "Hammam Basic", price: "150 DH" },
         { name: "Hammam Oriental", price: "250 DH" },

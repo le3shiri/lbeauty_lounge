@@ -100,7 +100,7 @@ export default function PackagesPage() {
         {/* Immersive Hero */}
         <section className="packages-hero">
           <div className="packages-hero-bg">
-            <Image src="/images/spa-tanger-interior.png" alt="Luxe Beauty Lounge Membership" fill style={{ objectFit: 'cover' }} priority />
+            <Image src="/images/DSC05769.jpg" alt="Luxe Beauty Lounge Membership" fill style={{ objectFit: 'cover' }} priority />
           </div>
           <div className="packages-hero-content container">
             <motion.span 

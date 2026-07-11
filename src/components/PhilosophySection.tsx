@@ -68,8 +68,8 @@ export default function PhilosophySection() {
             transition={{ duration: 1 }}
           >
             <Image 
-              src="/images/spa-tanger-relax.png" 
-              alt="Relaxation Spa Tanger" 
+              src="/images/DSC05768.jpg" 
+              alt="Relaxation Lounge Luxe Beauty" 
               fill
               style={{ objectFit: 'cover' }}
             />
@@ -84,8 +84,8 @@ export default function PhilosophySection() {
             transition={{ duration: 1 }}
           >
             <Image 
-              src="/images/spa-tanger-massage.png" 
-              alt="Luxury Massage Tanger" 
+              src="/images/DSC05587.jpg" 
+              alt="Luxury Massage Tools Tanger" 
               fill
               style={{ objectFit: 'cover' }}
             />

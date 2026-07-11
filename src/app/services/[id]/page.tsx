@@ -14,7 +14,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ id: s
   const servicesData: Record<string, any> = {
     massage: {
       title: "Masterful <i>Massages</i>",
-      image: "/images/spa-tanger-massage.png",
+      image: "/images/DSC05587.jpg",
       description: "Our signature massage therapies are designed to release deep-seated tension, improve circulation, and restore your body's natural balance. Utilizing premium essential oils and hot stones, our certified therapists in Tanger will customize each session to your specific needs.",
       duration: "60 - 90 Minutes",
       price: "$120",
@@ -28,7 +28,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ id: s
     },
     facial: {
       title: "Radiant <i>Facials</i>",
-      image: "/images/spa-tanger-facial.png",
+      image: "/images/DSC05583.jpg",
       description: "Rejuvenate your skin with our exclusive facial treatments. We use only the finest organic products and advanced techniques to deeply cleanse, exfoliate, and hydrate your skin, leaving you with a radiant, youthful glow in the heart of Tanger.",
       duration: "45 - 60 Minutes",
       price: "$110",
@@ -42,7 +42,7 @@ export default function ServiceDetailsPage({ params }: { params: Promise<{ id: s
     },
     body: {
       title: "Ancestral <i>Hammam</i>",
-      image: "/images/spa-tanger-relax.png",
+      image: "/images/DSC05768.jpg",
       description: "Indulge in our luxurious body treatments designed to detoxify, exfoliate, and nourish your entire body. From invigorating salt scrubs to hydrating body wraps, these treatments will leave your skin feeling silky smooth and completely revitalized.",
       duration: "45 - 90 Minutes",
       price: "$90",
