@@ -92,6 +92,47 @@ export default function PriceBookPage() {
         { name: "Hammam Bubble Souffle", price: "350 DH" },
         { name: "Hammam Luxe", price: "500 DH" },
       ]
+    },
+    {
+      title: "Épilation Laser",
+      subtitle: "La douceur durable avec une technologie de pointe.",
+      image: "/images/DSC05587.jpg",
+      services: [
+        { name: "Visage - Lèvre supérieure", price: "150 DH" },
+        { name: "Visage - Menton", price: "200 DH" },
+        { name: "Visage complet", price: "500 DH" },
+        { name: "Corps - Aisselles", price: "300 DH" },
+        { name: "Corps - Bras", price: "500 DH" },
+        { name: "Corps - Jambes complètes", price: "1 200 DH" },
+        { name: "Corps - Maillot", price: "400 DH" },
+      ]
+    },
+    {
+      title: "Hydrafacial",
+      subtitle: "Nettoyage, hydratation et éclat immédiat.",
+      image: "/images/DSC05586.jpg",
+      services: [
+        { name: "Basic", price: "350 DH" },
+        { name: "Platinum", price: "500 DH" },
+        { name: "Silver", price: "1 000 DH" },
+        { name: "Gold", price: "1 500 DH" },
+      ]
+    },
+    {
+      title: "Médecine Esthétique",
+      subtitle: "Soins anti-âge et harmonisation du visage.",
+      image: "/images/DSC05583.jpg",
+      services: [
+        { name: "Skinbooster - Visage", price: "1 200 DH" },
+        { name: "Skinbooster - Cou", price: "1 200 DH" },
+        { name: "Skinbooster - Décolleté", price: "1 200 DH" },
+        { name: "Radiesse - Visage", price: "3 700 DH" },
+        { name: "Radiesse - Cou", price: "3 700 DH" },
+        { name: "Radiesse - Décolleté", price: "3 700 DH" },
+        { name: "Radiesse - Mains", price: "3 700 DH" },
+        { name: "Botox visage", price: "dès 2 000 DH" },
+        { name: "Filler visage et lèvres (par ml)", price: "dès 1 500 DH" },
+      ]
     }
   ];
 
