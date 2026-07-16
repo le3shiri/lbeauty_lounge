@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './services.css';
 import PageTransition from '@/components/PageTransition';
 
@@ -24,6 +24,17 @@ interface Category {
 
 export default function ServicesPage() {
   const [activeCategory, setActiveCategory] = useState("coiffure");
+  const navRef = useRef<HTMLElement>(null);
+
+  const scrollNav = (direction: 'left' | 'right') => {
+    if (navRef.current) {
+      const scrollAmount = 250;
+      navRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   const categories: Category[] = [
     {
@@ -192,8 +203,11 @@ export default function ServicesPage() {
 
         {/* Sticky Sub-Nav */}
         <div className="category-nav-wrapper">
-          <div className="container">
-            <nav className="category-nav">
+          <div className="container" style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+            <button className="nav-arrow" onClick={() => scrollNav('left')} aria-label="Scroll left">
+              &#10094;
+            </button>
+            <nav className="category-nav" ref={navRef}>
               {categories.map(cat => (
                 <button 
                   key={cat.id}
@@ -206,6 +220,9 @@ export default function ServicesPage() {
                 </button>
               ))}
             </nav>
+            <button className="nav-arrow" onClick={() => scrollNav('right')} aria-label="Scroll right">
+              &#10095;
+            </button>
           </div>
         </div>
 
