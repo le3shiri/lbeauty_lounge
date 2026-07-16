@@ -16,7 +16,7 @@ export default function AdminDashboard() {
           </div>
           <div style={{ background: '#fff', padding: '25px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
             <h3 style={{ fontSize: '14px', color: '#888', textTransform: 'uppercase', marginBottom: '10px' }}>Revenue (Today)</h3>
-            <div style={{ fontSize: '32px', fontWeight: 'bold', color: 'var(--color-primary)' }}>$3,450</div>
+            <div style={{ fontSize: '32px', fontWeight: 'bold', color: 'var(--color-primary)' }}>3,450 MAD</div>
           </div>
           <div style={{ background: '#fff', padding: '25px', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.05)' }}>
             <h3 style={{ fontSize: '14px', color: '#888', textTransform: 'uppercase', marginBottom: '10px' }}>Total Clients</h3>

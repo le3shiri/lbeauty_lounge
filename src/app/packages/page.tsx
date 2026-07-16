@@ -11,7 +11,7 @@ export default function PackagesPage() {
     {
       title: "Couples Retreat",
       tagline: "A romantic escape for two.",
-      price: "$450",
+      price: "450 MAD",
       features: [
         "90 Min Dual Massage",
         "Private Hammam Access",
@@ -23,7 +23,7 @@ export default function PackagesPage() {
     {
       title: "Tanger Wellness Day",
       tagline: "Our most comprehensive ritual.",
-      price: "$380",
+      price: "380 MAD",
       features: [
         "Deep Tissue Restore",
         "Luxe Glow Signature Facial",
@@ -36,7 +36,7 @@ export default function PackagesPage() {
     {
       title: "Monthly Reset",
       tagline: "Essential regular wellness.",
-      price: "$220",
+      price: "220 MAD",
       features: [
         "60 Min Massage of Choice",
         "Express Skin Refiner",
@@ -50,7 +50,7 @@ export default function PackagesPage() {
   const memberships = [
     {
       tier: "Silver Tier",
-      price: "$199",
+      price: "199 MAD",
       period: "/month",
       features: [
         "2 Treatments per month",
@@ -61,7 +61,7 @@ export default function PackagesPage() {
     },
     {
       tier: "Gold Tier",
-      price: "$299",
+      price: "299 MAD",
       period: "/month",
       features: [
         "3 Treatments per month",
