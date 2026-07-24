@@ -53,6 +53,7 @@ export default function ServicesPage() {
         { name: "Rinçage", price: "dès 200 DH" },
         { name: "Soin de cheveux", price: "200 - 500 DH", desc: "gamme loreal expert" },
         { name: "Lissage", price: "dès 500 DH", badge: "Premium" },
+        { name: "Les points", price: "dès 20 DH"},
       ]
     },
     {
@@ -62,18 +63,21 @@ export default function ServicesPage() {
       image: "/images/DSC05583.jpg",
       services: [
         { name: "Pose vernis normal", price: "50 DH" },
-        { name: "Manucure Normale", price: "70 DH", badge: "Best Seller" },
-        { name: "Manucure Spa", price: "100 DH" },
+        { name: "Manucure Normale", price: "100 DH", badge: "Best Seller" },
+        { name: "Manucure Spa", price: "120 DH" },
         { name: "Pédicure Normale", price: "200 DH" },
-        { name: "Pose permanent", price: "150 DH" },
+        { name: "Pose permanent (semilac)", price: "150 DH" },
+        { name: "Pose permanent (venalisa)", price: "120 DH" },
         { name: "Pédicure Spa", price: "200 - 250 DH" },
         { name: "Pédicure Russe", price: "250 DH" },
-        { name: "Gel sans capsule", price: "250 DH"},
+        // { name: "Gel sans capsule", price: "250 DH"},
         { name: "Biab", price: "250 DH" },
         { name: "Biab Avec capsule", price: "300 DH" },
         { name: "Pédicure Spéciale avec fil", price: "300 DH" },
-        { name: "Gel avec capsule", price: "dès 400 DH" },
+        // { name: "Gel avec capsule", price: "dès 400 DH" },
         { name: "Pédicure Médicale", price: "400 DH" },
+        { name: "french", price: "50 DH" },
+        { name: "design", price: "10 DH par doigt" },
       ]
     },
     {
@@ -89,10 +93,10 @@ export default function ServicesPage() {
         { name: "Lash lift / Brow lift", price: "250 DH" },
         { name: "Massage relaxant", price: "200 DH", desc: "30 min", badge: "Détente" },
         { name: "Épilation complète", price: "300 DH" },
-        { name: "Soin de visage normale", price: "250 DH" },
+        { name: "Soin de visage normale", price: "200 DH" },
         { name: "Massage médicale", price: "400 DH", desc: "1h" },
         { name: "Head-Spa", price: "350 DH", desc: "45 min" },
-        { name: "Hydrafacial (Filorga)", price: "450 - 600 DH", badge: "Hot" },
+        { name: "Hydrafacial (Filorga)", price: "dès 600 DH", badge: "Hot" },
         { name: "Massage maderant (zone)", price: "200 DH", desc: "30 min" },
       ]
     },
